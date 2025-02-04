@@ -3,6 +3,20 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
+// Text Animation for "Let's Get In Touch"
+const text = "Let's Get In Touch";
+const letterVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15, // Delay for each letter
+      duration: 0.4,
+    },
+  }),
+};
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -50,17 +64,39 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative flex flex-col items-center justify-center min-h-screen px-10 bg-[#2d2347] text-white overflow-hidden">
+    <section id="contact" className="relative flex flex-col items-start justify-center min-h-screen px-10 bg-[#1a1530] text-white overflow-hidden">
       
-      {/* Contact Heading on the Left */}
+      {/* Contact Heading */}
       <motion.h2 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-6xl font-bold text-purple-300 text-left w-full max-w-4xl"
+        className="text-6xl font-bold text-purple-300"
       >
         CONTACT
       </motion.h2>
+
+      {/* Letter-by-Letter Animated "Let's Get In Touch" - Left Aligned */}
+      <motion.div 
+        className="text-3xl font-semibold text-purple-400 mt-4 flex space-x-2"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: { 
+              staggerChildren: 0.15, // Delay between each letter
+              repeat: Infinity, // Loop forever
+              repeatType: "loop", // Continuous looping
+            },
+          },
+        }}
+      >
+        {text.split("").map((char, i) => (
+          <motion.span key={i} variants={letterVariants}>
+            {char}
+          </motion.span>
+        ))}
+      </motion.div>
 
       {/* Contact Form Section */}
       <div className="flex flex-col md:flex-row items-center justify-center mt-10 max-w-6xl w-full">
@@ -70,9 +106,8 @@ export default function Contact() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-lg text-gray-300 md:w-1/2"
+          className="text-lg text-gray-300 md:w-1/2 mt-6"
         >
-          <h3 className="text-3xl text-purple-400 font-bold mb-4">Let's Get In Touch 🚀</h3>
           <p>
             Feel free to reach out for any collaborations, job opportunities, or just to say hello! 
             I'm always excited to discuss new ideas and work on interesting projects.
@@ -109,7 +144,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder="Your Email"
               required
-              className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-md focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-800 text-Black border border-gray-600 rounded-md focus:ring-2 focus:ring-purple-500"
             />
           </div>
           <div className="mb-4">

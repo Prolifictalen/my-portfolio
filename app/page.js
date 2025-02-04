@@ -1,73 +1,71 @@
 "use client";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
-import Background from "../components/Background";
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Projects from "../components/Projects";
+import Experience from "../components/Experience";
+import ParticlesBackground from "../components/ParticlesBackground";
 
 export default function Home() {
   return (
-    <div className="relative bg-darkBg text-white">
-      {/* Background Animation */}
-      <Background />
-
+    <div className="relative bg-[#1a1530] text-white">
       {/* Navigation Bar */}
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center h-screen text-center bg-gradient-to-b from-[#2d2347] to-[#1a1530] text-white overflow-hidden">
-      
-      {/* Floating Background Elements */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10">
+      {/* Hero Section with Particles */}
+      <section className="relative flex flex-col items-center justify-center h-screen text-center overflow-hidden">
         
-      </div>
+        {/* Particles Background Positioned Correctly */}
+        <div className="absolute inset-0">
+          <ParticlesBackground />
+        </div>
 
-      {/* Title Animation */}
-      <motion.h1
-        initial={{ opacity: 0, y: 50, rotate: -5 }}
-        animate={{ opacity: 1, y: 0, rotate: 0 }}
-        transition={{ duration: 1 }}
-        className="text-[6rem] font-extrabold text-purple-300 tracking-wide uppercase leading-tight drop-shadow-md"
-        style={{ fontFamily: "'Bangers', cursive" }} // Unique comic-like font
-      >
-        Who's Astha?
-      </motion.h1>
+        {/* Text Content */}
+        <motion.h1
+          initial={{ opacity: 0, y: 50, rotate: -5 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 1 }}
+          className="text-[6rem] font-extrabold text-purple-300 tracking-wide uppercase leading-tight drop-shadow-md relative z-10"
+          style={{ fontFamily: "'Bangers', cursive" }}
+        >
+          Who's Astha?
+        </motion.h1>
 
-      {/* Subtitle */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="text-2xl text-gray-200 mt-4 font-semibold"
-      >
-        Software Developer | Web Enthusiast
-      </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-2xl text-gray-200 mt-4 font-semibold relative z-10"
+        >
+          Software Developer | Web Enthusiast
+        </motion.p>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-16 px-8 bg-darkBg">
+      {/* Other Sections */}
+      <section id="about" className="py-16 px-8 bg-[#1a1530]">
         <About />
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-16 px-8 bg-gray-900">
+      <section id="experience" className="py-16 px-8 bg-[#1a1530]">
+        <Experience />
+      </section>
+
+      <section id="skills" className="py-16 px-8 bg-[#1a1530]">
         <Skills />
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-16 px-8 bg-darkBg">
+      <section id="projects" className="py-16 px-8 bg-[#1a1530]">
         <Projects />
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 px-8 bg-darkBg">
+      <section id="contact" className="py-16 px-8 bg-[#1a1530]">
         <Contact />
       </section>
 
-      {/* Footer Section */}
+      {/* Footer */}
       <Footer />
     </div>
   );

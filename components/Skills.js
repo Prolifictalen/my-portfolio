@@ -8,6 +8,7 @@ const techStack = [
   { title: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
   { title: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
   { title: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { title: "Leaflet.js", icon: "/icons/leaflet.png" },
   { title: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
   { title: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
   { title: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
@@ -22,10 +23,26 @@ const techStack = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-10 bg-gray-900 text-white text-center overflow-hidden">
-      <h2 className="text-5xl font-bold text-purple-400 mb-8">My Tech Stack 🚀</h2>
+    <motion.section
+      id="skills"
+      className="py-20 px-10 bg-#1a1530 text-white text-center overflow-hidden"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      {/* Section Heading */}
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-5xl font-bold text-purple-400 mb-8"
+      >
+        Tech Stack!!
+      </motion.h2>
+
+      {/* Tech Stack Moving Cards */}
       <div className="relative w-full overflow-hidden">
-        {/* Moving Cards */}
         <motion.div
           className="flex space-x-8"
           initial={{ x: "100%" }}
@@ -48,6 +65,6 @@ export default function Skills() {
           ))}
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
