@@ -9,17 +9,17 @@ export default function ParticlesBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+    <div className="fixed inset-0 w-full h-full pointer-events-none z-[-1]">
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
-          fullScreen: { enable: false }, // Keeps it within the hero section
+          fullScreen: { enable: true }, // Ensure it covers everything
           background: { color: "transparent" },
           fpsLimit: 60,
           particles: {
             number: {
-              value: 100, // Adjust number of particles
+              value: 120,
               density: { enable: true, value_area: 1200 },
             },
             color: { value: "#ffffff" },
