@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 
 const techStack = [
   { title: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
@@ -23,48 +22,23 @@ const techStack = [
 
 export default function Skills() {
   return (
-    <motion.section
+    <section
       id="skills"
-      className="py-20 px-10 bg-#1a1530 text-white text-center overflow-hidden"
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true }}
+      className="py-20 px-10 bg-gradient-to-br from-[#1a1530] to-[#2b2250] text-white text-center"
     >
-      {/* Section Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-5xl font-bold text-purple-400 mb-8"
-      >
-        Tech Stack!!
-      </motion.h2>
+      <h2 className="text-5xl font-extrabold text-purple-400 mb-16 tracking-wide">Tech Stack 💻</h2>
 
-      {/* Tech Stack Moving Cards */}
-      <div className="relative w-full overflow-hidden">
-        <motion.div
-          className="flex space-x-8"
-          initial={{ x: "100%" }}
-          animate={{ x: "-100%" }}
-          transition={{
-            repeat: Infinity,
-            duration: 15,
-            ease: "linear",
-          }}
-        >
-          {techStack.map((tech, index) => (
-            <motion.div
-              key={index}
-              className="bg-purple-400 text-black p-6 rounded-xl shadow-lg flex flex-col items-center w-48 h-48 justify-center transform"
-              whileHover={{ scale: 1.1 }}
-            >
-              <img src={tech.icon} alt={tech.title} className="w-16 h-16 mb-4" />
-              <h3 className="text-2xl font-bold">{tech.title}</h3>
-            </motion.div>
-          ))}
-        </motion.div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 place-items-center">
+        {techStack.map((tech, index) => (
+          <div
+            key={index}
+            className="w-40 h-40 bg-[#201c3a] rounded-2xl shadow-[0_0_30px_rgba(128,0,255,0.1)] border border-purple-600 flex flex-col items-center justify-center p-4"
+          >
+            <img src={tech.icon} alt={tech.title} className="w-14 h-14 mb-4" />
+            <h3 className="text-md font-semibold text-purple-200">{tech.title}</h3>
+          </div>
+        ))}
       </div>
-    </motion.section>
+    </section>
   );
 }

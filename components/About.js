@@ -24,14 +24,12 @@ export default function About() {
           className="text-lg text-gray-300 md:w-1/2"
         >
           <p>
-            Hello there, I'm so happy you are here! (: <br />
-            My name is <span className="text-purple-400 font-bold">Astha Singh</span>, and I'm a junior Computer Science student based in India. <br />
-            I have a strong passion for web development, exploring new technologies, and working with exciting projects.
+            Hello there, I’m so glad you’re here! (: <br />
+            My name is <span className="text-purple-400 font-bold">Astha Singh</span>, and I’m currently working as an Associate Software Engineer at a startup, with a focus on Python backend development and web development. <br />
+            I have a strong passion for building innovative digital experiences, exploring new technologies, and collaborating on exciting, impactful projects.
           </p>
           <p className="mt-4">
-            I'm continuously thrilled to partner with individuals and teams who
-            wholeheartedly embrace my fervor for crafting extraordinary experiences.
-            Your visit to my portfolio is deeply appreciated!
+            Thank you for visiting my portfolio — it truly means a lot!
           </p>
         </motion.div>
         

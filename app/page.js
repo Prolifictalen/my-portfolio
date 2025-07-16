@@ -29,7 +29,7 @@ export default function Home() {
           className="text-[6rem] font-extrabold text-purple-300 tracking-wide uppercase leading-tight drop-shadow-md"
           style={{ fontFamily: "'Bangers', cursive" }}
         >
-          Who's Astha?
+          Hey I'm Astha?
         </motion.h1>
 
         <motion.p
@@ -38,7 +38,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.5 }}
           className="text-2xl text-gray-200 mt-4 font-semibold"
         >
-          Software Developer | Web Enthusiast
+          Python Backend Developer | Web Developer
         </motion.p>
       </section>
 
